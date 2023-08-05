@@ -1,4 +1,5 @@
 import Image from "next/image";
+import OrderButton from "./components/order-button";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
         width={184}
         height={184}
       ></Image>
+      <OrderButton />
     </div>
   );
 }
