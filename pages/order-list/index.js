@@ -1,3 +1,1 @@
-export default function OrderList() {
-  console.log("Order List");
-}
+export default function OrderList() {}
