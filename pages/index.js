@@ -1,5 +1,5 @@
 import Image from "next/image";
-import OrderButton from "./components/order-button";
+import OrderButton from "/components/order-button";
 
 export default function HomePage() {
   return (
