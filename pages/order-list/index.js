@@ -5,14 +5,10 @@ export default function OrderList() {
   return (
     <>
       <h1>Order Menu</h1>
-      <ul>
-        <h2>Hauptspeisen</h2>
-        <Maindishes />
-      </ul>
-      <ul>
-        <h2>Getränke</h2>
-        <Drinks />
-      </ul>
+      <h2>Hauptspeisen</h2>
+      <Maindishes />
+      <h2>Getränke</h2>
+      <Drinks />
     </>
   );
 }
