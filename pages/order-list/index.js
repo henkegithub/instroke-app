@@ -1,3 +1,4 @@
+import ShoppingCart from "/components/shopping-cart";
 import Drinks from "/components/order-menu/drink-menu";
 import Maindishes from "/components/order-menu/main-menu";
 
@@ -9,6 +10,7 @@ export default function OrderList() {
       <Maindishes />
       <h2>Getränke</h2>
       <Drinks />
+      <ShoppingCart />
     </>
   );
 }
