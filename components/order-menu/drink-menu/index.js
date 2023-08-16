@@ -1,28 +1,10 @@
 import { Product } from "@/components/Product";
+import { drinks } from "@/pages/_app.js";
 export default function Drinks() {
-  const products = [
-    {
-      name: "Apfelschorle",
-      price: 2.5,
-    },
-    {
-      name: "Johannisbeersaft",
-      price: 2.5,
-    },
-    {
-      name: "Zitroneneistee",
-      price: 3.5,
-    },
-    {
-      name: "Pfirsicheistee",
-      price: 3.5,
-    },
-  ];
-
   return (
     <ul>
-      {products.map((product) => (
-        <Product key={product} name={product.name} price={product.price} />
+      {drinks.map((drink) => (
+        <Product key={drink} name={drink.name} price={drink.price} />
       ))}
     </ul>
   );
