@@ -6,7 +6,7 @@ export default function OrderOverview() {
     // how can i make this work??
     <>
       <ul>
-        <li>{products.name}</li>
+        <li>Item1</li>
         <li>10.50€</li>
         <li>2</li>
         <li>Item2</li>
