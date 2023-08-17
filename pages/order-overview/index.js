@@ -1,20 +1,19 @@
-export default function OrderOverview() {
+export default function OrderOverview({ items }) {
   return (
-    // i want to select the data displayed on the order menu
-    //data i need is name price and amount selected
-    // display that and add a total price sum
-    // how can i make this work??
     <>
       <ul>
-        <li>Item1</li>
-        <li>10.50€</li>
-        <li>2</li>
-        <li>Item2</li>
-        <li>9.50€</li>
-        <li>1</li>
+        {items.map((item) => {
+          return (
+            <li key={item.id}>
+              <p>{item.name}</p>
+              <p>{item.price}€</p>
+              <p>{item.amount}</p>
+            </li>
+          );
+        })}
       </ul>
-      <h1>Total:</h1>
-      <p>30.50€</p>
+      <h1>Total Price:</h1>
+      {items.map((item) => item.price * item.amount).reduce((a, b) => a + b)} €
     </>
   );
 }

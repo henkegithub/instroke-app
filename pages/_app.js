@@ -1,3 +1,4 @@
+import { useState } from "react";
 import GlobalStyle from "../styles";
 
 export const maindishes = [
@@ -25,32 +26,53 @@ export const maindishes = [
 
 export const drinks = [
   {
-    id: "1",
+    id: "5",
     name: "Apfelschorle",
     price: 2.5,
   },
   {
-    id: "2",
+    id: "6",
     name: "Johannisbeersaft",
     price: 2.5,
   },
   {
-    id: "3",
+    id: "7",
     name: "Zitroneneistee",
     price: 3.5,
   },
   {
-    id: "4",
+    id: "8",
     name: "Pfirsicheistee",
     price: 3.5,
   },
 ];
 
 export default function App({ Component, pageProps }) {
+  const [items, setItems] = useState([]);
+  function handleAddItem(newItem) {
+    const alreadyInList = items.find((item) => item.id === newItem.id);
+    if (alreadyInList) {
+      console.log("is in list");
+      setItems(
+        items.map((item) => {
+          if (item.id !== newItem.id) {
+            return item;
+          }
+          return {
+            ...item,
+            amount: newItem.amount,
+          };
+        })
+      );
+      return;
+    }
+    console.log("not in list");
+    setItems([...items, newItem]);
+  }
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Component {...pageProps} handleAddItem={handleAddItem} items={items} />
     </>
   );
 }
