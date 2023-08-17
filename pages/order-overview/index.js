@@ -1,4 +1,7 @@
 export default function OrderOverview({ items }) {
+  function getTotalPrice(items) {
+    return items.reduce((memo, item) => memo + item.price * item.amount, 0);
+  }
   return (
     <>
       <ul>
@@ -13,7 +16,7 @@ export default function OrderOverview({ items }) {
         })}
       </ul>
       <h1>Total Price:</h1>
-      {items.map((item) => item.price * item.amount).reduce((a, b) => a + b)} €
+      {getTotalPrice(items)} €
     </>
   );
 }
