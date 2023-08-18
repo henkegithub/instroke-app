@@ -14,10 +14,3 @@ export default function Maindishes({ handleAmountChange, items }) {
     </ul>
   );
 }
-
-// handleAddItem={handleAddItem}
-// key={maindish.id}
-// id={maindish.id}
-// name={maindish.name}
-// price={maindish.price}
-// items={items}

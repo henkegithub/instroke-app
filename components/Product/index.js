@@ -1,36 +1,4 @@
-import { useState, useEffect } from "react";
-
 export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
-  //const alreadyInList = items.find((item) => item.id === id);
-
-  // const [counter, setCounter] = useState(
-  //   alreadyInList ? alreadyInList.amount : 1
-  // );
-
-  // useEffect(() => {
-  //   setCounter(counter);
-  // }, [setCounter, counter]);
-
-  //const orderItem = { id, name: name, price, amount: counter };
-  //increase counter
-  // const increase = () => {
-  //   setCounter(counter + 1);
-  //   handleAddItem(orderItem);
-  // };
-
-  // //decrease counter
-  // const decrease = () => {
-  //   if (counter > 0) {
-  //     setCounter(counter - 1);
-  //     handleAddItem(orderItem);
-  //   }
-  // };
-
-  // //reset counter
-  // const reset = () => {
-  //   setCounter(0);
-  // };
-
   const increase = () => {
     handleAmountChange(id, amount + 1);
   };
