@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GlobalStyle from "../styles";
 
 export const maindishes = [
@@ -49,30 +49,33 @@ export const drinks = [
 
 export default function App({ Component, pageProps }) {
   const [items, setItems] = useState([]);
-  function handleAddItem(newItem) {
-    const alreadyInList = items.find((item) => item.id === newItem.id);
+  console.log("items:", items);
+  function handleAmountChange(id, amount) {
+    const alreadyInList = items.find((item) => item.id === id);
     if (alreadyInList) {
-      console.log("is in list");
       setItems(
-        items.map((item) => {
-          if (item.id !== newItem.id) {
-            return item;
-          }
-          return {
-            ...item,
-            amount: newItem.amount,
-          };
-        })
+        items.map((item) =>
+          item.id !== id
+            ? item
+            : {
+                ...item,
+                amount: Math.max(amount, 0),
+              }
+        )
       );
       return;
     }
-    console.log("not in list");
-    setItems([...items, newItem]);
+    const dish = maindishes.find((item) => item.id === id);
+    setItems([...items, { ...dish, amount: Math.max(amount, 0) }]);
   }
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} handleAddItem={handleAddItem} items={items} />
+      <Component
+        {...pageProps}
+        handleAmountChange={handleAmountChange}
+        items={items}
+      />
     </>
   );
 }
