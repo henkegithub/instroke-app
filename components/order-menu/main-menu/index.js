@@ -1,16 +1,18 @@
 import { Product } from "@/components/Product";
-import { maindishes } from "@/pages/_app.js";
+import { menuItems } from "@/pages/_app.js";
 export default function Maindishes({ handleAmountChange, items }) {
   return (
     <ul>
-      {maindishes.map((maindish) => (
-        <Product
-          handleAmountChange={handleAmountChange}
-          key={maindish.id}
-          amount={items.find((item) => item.id === maindish.id)?.amount}
-          {...maindish}
-        />
-      ))}
+      {menuItems
+        .filter((item) => item.type === "food")
+        .map((maindish) => (
+          <Product
+            handleAmountChange={handleAmountChange}
+            key={maindish.id}
+            amount={items.find((item) => item.id === maindish.id)?.amount}
+            {...maindish}
+          />
+        ))}
     </ul>
   );
 }

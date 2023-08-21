@@ -9,7 +9,7 @@ export default function OrderList({ handleAmountChange, items }) {
       <h2>Hauptspeisen</h2>
       <Maindishes handleAmountChange={handleAmountChange} items={items} />
       <h2>Getränke</h2>
-      {/* <Drinks handleAddItem={handleAddItem} items={items} /> */}
+      <Drinks handleAmountChange={handleAmountChange} items={items} />
       <ShoppingCart />
     </>
   );
