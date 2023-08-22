@@ -10,7 +10,9 @@ export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
   };
 
   const reset = () => {
-    handleAmountChange(id, 0);
+    if (amount !== 0) {
+      handleAmountChange(id, 0);
+    }
   };
   return (
     <>
