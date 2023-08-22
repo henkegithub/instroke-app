@@ -4,7 +4,9 @@ export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
   };
 
   const decrease = () => {
-    handleAmountChange(id, amount - 1);
+    if (amount !== 0) {
+      handleAmountChange(id, amount - 1);
+    }
   };
 
   const reset = () => {
