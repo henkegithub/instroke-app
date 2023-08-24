@@ -1,6 +1,7 @@
 import ShoppingCart from "/components/shopping-cart";
 import Drinks from "/components/order-menu/drink-menu";
 import Maindishes from "/components/order-menu/main-menu";
+import BackButton from "@/components/back-button";
 
 export default function OrderList({ handleAmountChange, items }) {
   return (
@@ -11,6 +12,7 @@ export default function OrderList({ handleAmountChange, items }) {
       <h2>Getränke</h2>
       <Drinks handleAmountChange={handleAmountChange} items={items} />
       <ShoppingCart />
+      <BackButton />
     </>
   );
 }
