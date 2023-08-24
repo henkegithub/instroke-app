@@ -76,6 +76,7 @@ export default function App({ Component, pageProps }) {
     const menu = menuItems.find((item) => item.id === id);
     setItems([...items, { ...menu, amount: Math.max(amount, 0) }]);
   }
+
   return (
     <>
       <GlobalStyle />
