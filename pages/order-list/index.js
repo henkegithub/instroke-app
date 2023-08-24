@@ -2,7 +2,7 @@ import ShoppingCart from "/components/shopping-cart";
 import Drinks from "/components/order-menu/drink-menu";
 import Maindishes from "/components/order-menu/main-menu";
 import OrderOverview from "../order-overview";
-import Backdrop from "@/components/slide-drawer/backdrop/index.js";
+import Backdrop from "@/components/back-drop/index.js";
 import { useState } from "react";
 
 export default function OrderList({ handleAmountChange, items }) {

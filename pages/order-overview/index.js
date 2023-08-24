@@ -4,6 +4,7 @@ export default function OrderOverview({ items, show }) {
   }
 
   const drawerClasses = ["side-drawer"];
+
   if (show) {
     drawerClasses.push("open");
   }
