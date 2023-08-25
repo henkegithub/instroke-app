@@ -6,7 +6,12 @@ import Backdrop from "@/components/back-drop/index.js";
 import BackButton from "@/components/back-button";
 import { useState } from "react";
 
-export default function OrderList({ handleAmountChange, items }) {
+export default function OrderList({
+  handleAmountChange,
+  items,
+  handleTableSelect,
+  selectedTable,
+}) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const drawerToggleClickHandler = () => {
@@ -24,7 +29,12 @@ export default function OrderList({ handleAmountChange, items }) {
       <Maindishes handleAmountChange={handleAmountChange} items={items} />
       <h2>Getränke</h2>
       <Drinks handleAmountChange={handleAmountChange} items={items} />
-      <OrderOverview items={items} show={drawerOpen} />
+      <OrderOverview
+        items={items}
+        show={drawerOpen}
+        handleTableSelect={handleTableSelect}
+        selectedTable={selectedTable}
+      />
       {drawerOpen && <Backdrop close={backdropClickHandler} />}
       <ShoppingCart toggle={drawerToggleClickHandler} />
       <BackButton />

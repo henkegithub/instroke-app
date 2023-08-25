@@ -16,15 +16,20 @@ const StyledOrderOverview = styled.div`
   transition: transform 0.3s ease-out;
 `;
 
-export default function OrderOverview({ items, show }) {
+export default function OrderOverview({
+  items,
+  show,
+  handleTableSelect,
+  selectedTable,
+}) {
   function getTotalPrice(items) {
     return items.reduce((memo, item) => memo + item.price * item.amount, 0);
   }
-  const [selectedTable, setSelectedTable] = useState(null);
+  // const [selectedTable, setSelectedTable] = useState(null);
 
-  const handleTableSelect = (event) => {
-    setSelectedTable(event.target.value);
-  };
+  // const handleTableSelect = (event) => {
+  //   setSelectedTable(event.target.value);
+  // };
 
   return (
     <>
