@@ -46,7 +46,6 @@ export default function OrderOverview({
           id="tableInput"
           value={selectedTable}
           onChange={handleTableSelect}
-          style={{ width: "100px" }}
         >
           <option value="">Table Number</option>
           {Array.from({ length: 100 }, (_, index) => index + 1).map(
@@ -57,8 +56,6 @@ export default function OrderOverview({
             )
           )}
         </select>
-        <br />
-        <br />
         {selectedTable && <CheckOutButton />}
       </StyledOrderOverview>
     </>
