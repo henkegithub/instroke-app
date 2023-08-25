@@ -1,9 +1,9 @@
-import Link from "next/link";
+import React from "react";
 
-export default function ShoppingCart() {
+export default function ShoppingCart({ toggle }) {
   return (
-    <>
-      <Link href="/order-overview">Shopping Cart</Link>
-    </>
+    <div>
+      <button onClick={toggle}>View Order</button>
+    </div>
   );
 }
