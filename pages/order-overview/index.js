@@ -1,3 +1,5 @@
+import CheckOutButton from "@/components/check-out-button";
+import { useState } from "react";
 import styled from "styled-components";
 
 const StyledOrderOverview = styled.div`
@@ -18,6 +20,11 @@ export default function OrderOverview({ items, show }) {
   function getTotalPrice(items) {
     return items.reduce((memo, item) => memo + item.price * item.amount, 0);
   }
+  const [selectedTable, setSelectedTable] = useState(null);
+
+  const handleTableSelect = (event) => {
+    setSelectedTable(event.target.value);
+  };
 
   return (
     <>
@@ -35,6 +42,25 @@ export default function OrderOverview({ items, show }) {
         </ul>
         <h1>Total Price:</h1>
         {getTotalPrice(items)} €
+        <label htmlFor="tableInput">Select Table: </label>
+        <select
+          id="tableInput"
+          value={selectedTable}
+          onChange={handleTableSelect}
+          style={{ width: "100px" }}
+        >
+          <option value="">Table Number</option>
+          {Array.from({ length: 100 }, (_, index) => index + 1).map(
+            (number) => (
+              <option key={number} value={number}>
+                {number}
+              </option>
+            )
+          )}
+        </select>
+        <br />
+        <br />
+        {selectedTable && <CheckOutButton />}
       </StyledOrderOverview>
     </>
   );
