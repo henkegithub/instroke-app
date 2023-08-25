@@ -1,8 +1,8 @@
-export default function Checkout({ totalPrice, selectedTable }) {
+export default function Checkout({ selectedTable }) {
   return (
     <div>
       <h2>Checkout Page</h2>
-      <p>Total Price: {totalPrice} €</p>
+      <p>Congratulations!</p>
       <p>Selected Table: {selectedTable}</p>
     </div>
   );
