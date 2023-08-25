@@ -16,11 +16,6 @@ export default function OrderList({ handleAmountChange, items }) {
     setDrawerOpen(false);
   };
 
-  let backdrop;
-  if (drawerOpen) {
-    backdrop = <Backdrop close={backdropClickHandler} />;
-  }
-
   return (
     <>
       <h1>Order Menu</h1>
@@ -29,7 +24,7 @@ export default function OrderList({ handleAmountChange, items }) {
       <h2>Getränke</h2>
       <Drinks handleAmountChange={handleAmountChange} items={items} />
       <OrderOverview items={items} show={drawerOpen} />
-      {backdrop}
+      {drawerOpen && <Backdrop close={backdropClickHandler} />}
       <ShoppingCart toggle={drawerToggleClickHandler} />
     </>
   );

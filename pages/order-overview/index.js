@@ -1,17 +1,27 @@
+import styled from "styled-components";
+
+const StyledOrderOverview = styled.div`
+  height: 100%;
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  z-index: 200;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  transform: ${(props) =>
+    props.$isOpen ? "translateX(0)" : "translateX(100%)"};
+  transition: transform 0.3s ease-out;
+`;
+
 export default function OrderOverview({ items, show }) {
   function getTotalPrice(items) {
     return items.reduce((memo, item) => memo + item.price * item.amount, 0);
   }
 
-  const drawerClasses = ["side-drawer"];
-
-  if (show) {
-    drawerClasses.push("open");
-  }
-
   return (
     <>
-      <div className={drawerClasses.join(" ")}>
+      <StyledOrderOverview $isOpen={show}>
         <ul>
           {items.map((item) => {
             return (
@@ -25,7 +35,7 @@ export default function OrderOverview({ items, show }) {
         </ul>
         <h1>Total Price:</h1>
         {getTotalPrice(items)} €
-      </div>
+      </StyledOrderOverview>
     </>
   );
 }
