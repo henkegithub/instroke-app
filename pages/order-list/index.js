@@ -3,6 +3,7 @@ import Drinks from "/components/order-menu/drink-menu";
 import Maindishes from "/components/order-menu/main-menu";
 import OrderOverview from "../order-overview";
 import Backdrop from "@/components/back-drop/index.js";
+import BackButton from "@/components/back-button";
 import { useState } from "react";
 
 export default function OrderList({ handleAmountChange, items }) {
@@ -26,6 +27,7 @@ export default function OrderList({ handleAmountChange, items }) {
       <OrderOverview items={items} show={drawerOpen} />
       {drawerOpen && <Backdrop close={backdropClickHandler} />}
       <ShoppingCart toggle={drawerToggleClickHandler} />
+      <BackButton />
     </>
   );
 }
