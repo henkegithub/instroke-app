@@ -1,5 +1,4 @@
 import CheckOutButton from "@/components/check-out-button";
-import { useState } from "react";
 import styled from "styled-components";
 
 const StyledOrderOverview = styled.div`
@@ -25,11 +24,6 @@ export default function OrderOverview({
   function getTotalPrice(items) {
     return items.reduce((memo, item) => memo + item.price * item.amount, 0);
   }
-  // const [selectedTable, setSelectedTable] = useState(null);
-
-  // const handleTableSelect = (event) => {
-  //   setSelectedTable(event.target.value);
-  // };
 
   return (
     <>
