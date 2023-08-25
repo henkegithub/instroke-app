@@ -1,3 +1,4 @@
+import CheckOutButton from "@/components/check-out-button";
 import styled from "styled-components";
 
 const StyledOrderOverview = styled.div`
@@ -14,7 +15,12 @@ const StyledOrderOverview = styled.div`
   transition: transform 0.3s ease-out;
 `;
 
-export default function OrderOverview({ items, show }) {
+export default function OrderOverview({
+  items,
+  show,
+  handleTableSelect,
+  selectedTable,
+}) {
   function getTotalPrice(items) {
     return items.reduce((memo, item) => memo + item.price * item.amount, 0);
   }
@@ -35,6 +41,22 @@ export default function OrderOverview({ items, show }) {
         </ul>
         <h1>Total Price:</h1>
         {getTotalPrice(items)} €
+        <label htmlFor="tableInput">Select Table: </label>
+        <select
+          id="tableInput"
+          value={selectedTable}
+          onChange={handleTableSelect}
+        >
+          <option value="">Table Number</option>
+          {Array.from({ length: 100 }, (_, index) => index + 1).map(
+            (number) => (
+              <option key={number} value={number}>
+                {number}
+              </option>
+            )
+          )}
+        </select>
+        {selectedTable && <CheckOutButton />}
       </StyledOrderOverview>
     </>
   );

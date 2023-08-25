@@ -53,6 +53,12 @@ export const menuItems = [
 ];
 
 export default function App({ Component, pageProps }) {
+  const [selectedTable, setSelectedTable] = useState(null);
+
+  const handleTableSelect = (event) => {
+    setSelectedTable(event.target.value);
+  };
+
   const [items, setItems] = useState([]);
   function handleAmountChange(id, amount) {
     const alreadyInList = items.find((item) => item.id === id);
@@ -84,6 +90,8 @@ export default function App({ Component, pageProps }) {
         {...pageProps}
         handleAmountChange={handleAmountChange}
         items={items}
+        handleTableSelect={handleTableSelect}
+        selectedTable={selectedTable}
       />
     </>
   );
