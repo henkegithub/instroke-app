@@ -49,7 +49,7 @@ export default function OrderOverview({
             return (
               <StyledListOverview key={item.id}>
                 <StyledParagraphOverview>
-                  {item.name} x {item.amount} for each: {item.price}€
+                  {item.amount} x {item.name} for each: {item.price}€
                 </StyledParagraphOverview>
               </StyledListOverview>
             );
