@@ -1,7 +1,8 @@
-import { styled } from "styled-components";
 import { StyledOrderButton, StyledOrderGhostButton } from "../StyledButton";
 import { StyledList } from "../StyledList";
 import { StyledParagraph } from "../StyledParagraph";
+import { StyledMenuItem } from "../StyledMenuItem";
+import { StyledDiv } from "../StyledDiv";
 
 export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
   const increase = () => {
@@ -41,17 +42,3 @@ export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
     </StyledList>
   );
 }
-
-const StyledMenuItem = styled.div`
-  width: 100%;
-  justify-content: space-between;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-`;
-
-const StyledDiv = styled.div`
-  display: flex;
-  gap: 0.9rem;
-  align-items: center;
-`;

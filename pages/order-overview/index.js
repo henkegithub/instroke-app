@@ -1,6 +1,15 @@
-import { StyledList } from "@/components/StyledList";
+import {
+  StyledListOverview,
+  StyledUlListOverview,
+} from "@/components/StyledList";
+import { StyledMenuItemOverview } from "@/components/StyledMenuItem";
+import {
+  StyledParagraphOverviewTotal,
+  StyledParagraphOverview,
+} from "@/components/StyledParagraph";
 import CheckOutButton from "@/components/check-out-button";
 import styled from "styled-components";
+import { device } from "@/utils/globalValues";
 
 const StyledOrderOverview = styled.div`
   height: 100%;
@@ -9,12 +18,16 @@ const StyledOrderOverview = styled.div`
   padding: 20px;
   top: 0;
   right: 0;
-  width: 40%;
+  width: 70%;
   z-index: 200;
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   transform: ${(props) =>
     props.$isOpen ? "translateX(0)" : "translateX(100%)"};
   transition: transform 0.3s ease-out;
+
+  @media ${device.tablet} {
+    width: 40%;
+  }
 `;
 
 export default function OrderOverview({
@@ -30,19 +43,23 @@ export default function OrderOverview({
   return (
     <>
       <StyledOrderOverview $isOpen={show}>
-        <ul>
+        <StyledUlListOverview>
           {items.map((item) => {
             return (
-              <StyledList key={item.id}>
-                <p>{item.amount}</p>
-                <p>{item.name}</p>
-                <p>Preis: {item.price}€</p>
-              </StyledList>
+              <StyledListOverview key={item.id}>
+                <StyledParagraphOverview>
+                  {item.name} x {item.amount} for each: {item.price}€
+                </StyledParagraphOverview>
+              </StyledListOverview>
             );
           })}
-        </ul>
-        <h1>Total:</h1>
-        <p>Price:{getTotalPrice(items)} €</p>
+        </StyledUlListOverview>
+        <StyledParagraphOverviewTotal>
+          Total Price:
+          <StyledParagraphOverviewTotal>
+            {getTotalPrice(items)} €
+          </StyledParagraphOverviewTotal>
+        </StyledParagraphOverviewTotal>
         <label htmlFor="tableInput">Select Table: </label>
         <select
           id="tableInput"

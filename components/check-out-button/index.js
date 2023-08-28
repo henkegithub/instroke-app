@@ -1,11 +1,12 @@
+import { StyledOrderButton } from "../StyledButton";
 import { StyledLink } from "../StyledLink";
 
 export default function CheckOutButton() {
   return (
     <>
-      <button>
+      <StyledOrderButton>
         <StyledLink href="/check-out">Checkout!</StyledLink>
-      </button>
+      </StyledOrderButton>
     </>
   );
 }
