@@ -8,6 +8,7 @@ import { useState } from "react";
 import { StyledMain } from "@/components/StyledMain";
 import { StyledHeaderPosition } from "@/components/StyledHeader";
 import { StyledMenuContainer } from "@/components/StyledMenuContainer";
+import { StyledDiv } from "@/components/StyledDiv";
 
 export default function OrderList({
   handleAmountChange,
@@ -43,8 +44,10 @@ export default function OrderList({
             selectedTable={selectedTable}
           />
           {drawerOpen && <Backdrop close={backdropClickHandler} />}
-          <ShoppingCart toggle={drawerToggleClickHandler} />
-          <BackButton />
+          <StyledDiv>
+            <ShoppingCart toggle={drawerToggleClickHandler} />
+            <BackButton />
+          </StyledDiv>
         </StyledMenuContainer>
       </StyledMain>
     </>

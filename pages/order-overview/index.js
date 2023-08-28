@@ -10,6 +10,7 @@ import {
 import CheckOutButton from "@/components/check-out-button";
 import styled from "styled-components";
 import { device } from "@/utils/globalValues";
+import { StyledDiv } from "@/components/StyledDiv";
 
 const StyledOrderOverview = styled.div`
   height: 100%;
@@ -60,22 +61,24 @@ export default function OrderOverview({
             {getTotalPrice(items)} €
           </StyledParagraphOverviewTotal>
         </StyledParagraphOverviewTotal>
-        <label htmlFor="tableInput">Select Table: </label>
-        <select
-          id="tableInput"
-          value={selectedTable}
-          onChange={handleTableSelect}
-        >
-          <option value="">Table Number</option>
-          {Array.from({ length: 100 }, (_, index) => index + 1).map(
-            (number) => (
-              <option key={number} value={number}>
-                {number}
-              </option>
-            )
-          )}
-        </select>
-        {selectedTable && <CheckOutButton />}
+        <StyledDiv>
+          <label htmlFor="tableInput">Select Table: </label>
+          <select
+            id="tableInput"
+            value={selectedTable}
+            onChange={handleTableSelect}
+          >
+            <option value="">Table Number</option>
+            {Array.from({ length: 100 }, (_, index) => index + 1).map(
+              (number) => (
+                <option key={number} value={number}>
+                  {number}
+                </option>
+              )
+            )}
+          </select>
+          {selectedTable && <CheckOutButton />}
+        </StyledDiv>
       </StyledOrderOverview>
     </>
   );

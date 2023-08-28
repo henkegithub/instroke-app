@@ -26,3 +26,15 @@ export const StyledParagraphOverviewTotal = styled.p`
     font-size: 24px;
   }
 `;
+
+export const StyledParagraphTable = styled.p`
+  display: flex;
+  gap: 5px;
+  flex-direction:
+  justify-content: space-between;
+  margin: 0;
+  font-size: 24px;
+  @media ${device.tablet} {
+    font-size: 48px;
+  }
+`;
