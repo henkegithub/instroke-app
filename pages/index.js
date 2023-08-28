@@ -12,8 +12,8 @@ export default function HomePage() {
       <Image
         alt="Restaurant Picture"
         src="/restaurant-image.jpg"
-        width={184}
-        height={184}
+        width={672}
+        height={448}
       ></Image>
       <OrderButton />
     </StyledMain>

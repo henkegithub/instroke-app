@@ -1,10 +1,14 @@
+import { StyledHeaderPosition } from "@/components/StyledHeader";
+import { StyledMain } from "@/components/StyledMain";
+
 export default function Checkout({ selectedTable }) {
   return (
-    <div>
-      <h1>Checkout Page</h1>
-      <p>Congratulations!</p>
+    <StyledMain>
+      <StyledHeaderPosition>
+        <h1>Congratulations!</h1>
+      </StyledHeaderPosition>
       <p>Your Order will be delivered shortly to:</p>
       <p>Table Nr.: {selectedTable}</p>
-    </div>
+    </StyledMain>
   );
 }

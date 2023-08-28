@@ -3,6 +3,5 @@ import styled from "styled-components";
 
 export const StyledLink = styled(Link)`
   color: black;
-  background-color: white;
   text-decoration: none;
 `;
