@@ -1,9 +1,6 @@
 import React from "react";
+import { StyledButton } from "../StyledButton";
 
 export default function ShoppingCart({ toggle }) {
-  return (
-    <div>
-      <button onClick={toggle}>View Order</button>
-    </div>
-  );
+  return <StyledButton onClick={toggle}>View Order</StyledButton>;
 }

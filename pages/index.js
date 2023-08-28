@@ -1,10 +1,14 @@
 import Image from "next/image";
 import OrderButton from "/components/order-button";
+import { StyledMain } from "@/components/StyledMain";
+import { StyledHeaderPosition } from "@/components/StyledHeader";
 
 export default function HomePage() {
   return (
-    <div>
-      <h1>Instroke</h1>
+    <StyledMain>
+      <StyledHeaderPosition>
+        <h1>Instroke</h1>
+      </StyledHeaderPosition>
       <Image
         alt="Restaurant Picture"
         src="/restaurant-image.jpg"
@@ -12,6 +16,6 @@ export default function HomePage() {
         height={184}
       ></Image>
       <OrderButton />
-    </div>
+    </StyledMain>
   );
 }

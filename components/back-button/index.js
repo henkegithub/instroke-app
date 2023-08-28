@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { StyledLink } from "../StyledLink";
 
 export default function BackButton() {
   return (
     <>
-      <Link href="./">Go Back!</Link>
+      <button>
+        <StyledLink href="./">Go Back!</StyledLink>
+      </button>
     </>
   );
 }

@@ -5,6 +5,8 @@ import OrderOverview from "../order-overview";
 import Backdrop from "@/components/back-drop/index.js";
 import BackButton from "@/components/back-button";
 import { useState } from "react";
+import { StyledMain } from "@/components/StyledMain";
+import { StyledHeaderPosition } from "@/components/StyledHeader";
 
 export default function OrderList({
   handleAmountChange,
@@ -24,20 +26,24 @@ export default function OrderList({
 
   return (
     <>
-      <h1>Order Menu</h1>
-      <h2>Hauptspeisen</h2>
-      <Maindishes handleAmountChange={handleAmountChange} items={items} />
-      <h2>Getränke</h2>
-      <Drinks handleAmountChange={handleAmountChange} items={items} />
-      <OrderOverview
-        items={items}
-        show={drawerOpen}
-        handleTableSelect={handleTableSelect}
-        selectedTable={selectedTable}
-      />
-      {drawerOpen && <Backdrop close={backdropClickHandler} />}
-      <ShoppingCart toggle={drawerToggleClickHandler} />
-      <BackButton />
+      <StyledMain>
+        <StyledHeaderPosition>
+          <h1>Order Menu</h1>
+        </StyledHeaderPosition>
+        <h2>Hauptspeisen</h2>
+        <Maindishes handleAmountChange={handleAmountChange} items={items} />
+        <h2>Getränke</h2>
+        <Drinks handleAmountChange={handleAmountChange} items={items} />
+        <OrderOverview
+          items={items}
+          show={drawerOpen}
+          handleTableSelect={handleTableSelect}
+          selectedTable={selectedTable}
+        />
+        {drawerOpen && <Backdrop close={backdropClickHandler} />}
+        <ShoppingCart toggle={drawerToggleClickHandler} />
+        <BackButton />
+      </StyledMain>
     </>
   );
 }

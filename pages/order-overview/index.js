@@ -1,3 +1,4 @@
+import { StyledList } from "@/components/StyledList";
 import CheckOutButton from "@/components/check-out-button";
 import styled from "styled-components";
 
@@ -7,7 +8,7 @@ const StyledOrderOverview = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  width: 40%;
+  width: 50%;
   z-index: 200;
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   transform: ${(props) =>
@@ -31,16 +32,16 @@ export default function OrderOverview({
         <ul>
           {items.map((item) => {
             return (
-              <li key={item.id}>
-                <p>{item.name}</p>
-                <p>{item.price}€</p>
+              <StyledList key={item.id}>
                 <p>{item.amount}</p>
-              </li>
+                <p>{item.name}</p>
+                <p>Preis: {item.price}€</p>
+              </StyledList>
             );
           })}
         </ul>
-        <h1>Total Price:</h1>
-        {getTotalPrice(items)} €
+        <h1>Total:</h1>
+        <p>Price:{getTotalPrice(items)} €</p>
         <label htmlFor="tableInput">Select Table: </label>
         <select
           id="tableInput"
