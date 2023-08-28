@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { device } from "@/utils/globalValues";
 
 export const StyledMain = styled.main`
   display: flex;
@@ -10,7 +9,4 @@ export const StyledMain = styled.main`
   gap: 1.5rem;
   z-index: 2;
   width: 100vw;
-
-  @media ${device.tablet} {
-  }
 `;
