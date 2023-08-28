@@ -63,6 +63,8 @@ export default function OrderOverview({
         </StyledDiv>
         <StyledDiv>
           <label htmlFor="tableInput">Select Table: </label>
+        </StyledDiv>
+        <StyledDiv>
           <select
             id="tableInput"
             value={selectedTable}
@@ -77,8 +79,8 @@ export default function OrderOverview({
               )
             )}
           </select>
-          {selectedTable && <CheckOutButton />}
         </StyledDiv>
+        <StyledDiv>{selectedTable && <CheckOutButton />}</StyledDiv>
       </StyledOrderOverview>
     </>
   );

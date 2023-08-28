@@ -36,7 +36,6 @@ export const StyledParagraphOverview = styled.p`
 export const StyledParagraphOverviewTotal = styled.p`
   display: flex;
   gap: 5px;
-  flex-direction:
   justify-content: space-between;
   margin: 0;
   font-size: 18px;
@@ -48,10 +47,9 @@ export const StyledParagraphOverviewTotal = styled.p`
 export const StyledParagraphTable = styled.p`
   display: flex;
   gap: 5px;
-  flex-direction:
   justify-content: space-between;
   margin: 0;
-  font-size: 24px;
+  font-size: 72px;
   @media ${device.tablet} {
     font-size: 48px;
   }
