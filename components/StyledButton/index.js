@@ -6,6 +6,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledOrderButton = styled.button`
+  color: white;
   border: none;
   background: transparent;
 `;
