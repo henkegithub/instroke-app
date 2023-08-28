@@ -4,6 +4,24 @@ import { device } from "@/utils/globalValues";
 export const StyledParagraph = styled.p`
   margin: 0;
   font-size: 24px;
+  display: flex;
+  width: 200px;
+`;
+
+export const StyledParagraphPrice = styled.p`
+  margin: 0;
+  font-size: 24px;
+  display: flex;
+  width: 100px;
+  justify-content: start;
+`;
+
+export const StyledParagraphCheckout = styled.p`
+  margin-bottom: 10px;
+  margin-top: 0px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
 `;
 
 export const StyledParagraphOverview = styled.p`

@@ -55,12 +55,12 @@ export default function OrderOverview({
             );
           })}
         </StyledUlListOverview>
-        <StyledParagraphOverviewTotal>
+        <StyledDiv>
           Total Price:
           <StyledParagraphOverviewTotal>
             {getTotalPrice(items)} €
           </StyledParagraphOverviewTotal>
-        </StyledParagraphOverviewTotal>
+        </StyledDiv>
         <StyledDiv>
           <label htmlFor="tableInput">Select Table: </label>
           <select

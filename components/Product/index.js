@@ -1,6 +1,6 @@
 import { StyledOrderButton, StyledOrderGhostButton } from "../StyledButton";
 import { StyledList } from "../StyledList";
-import { StyledParagraph } from "../StyledParagraph";
+import { StyledParagraph, StyledParagraphPrice } from "../StyledParagraph";
 import { StyledMenuItem } from "../StyledMenuItem";
 import { StyledDiv } from "../StyledDiv";
 
@@ -23,9 +23,8 @@ export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
   return (
     <StyledList>
       <StyledMenuItem>
-        <StyledParagraph>
-          {name} {price} €
-        </StyledParagraph>
+        <StyledParagraph>{name}</StyledParagraph>
+        <StyledParagraphPrice>{price} €</StyledParagraphPrice>
         <StyledDiv>
           <StyledOrderButton className="control__btn" onClick={increase}>
             +
