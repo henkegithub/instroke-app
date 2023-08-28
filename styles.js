@@ -12,6 +12,7 @@ export default createGlobalStyle`
   }
 
   body {
+    color: white;
     margin: 0;
     padding: 0;
     height: 100%;
