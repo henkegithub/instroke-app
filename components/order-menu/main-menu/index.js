@@ -1,9 +1,9 @@
 import { Product } from "@/components/Product";
-import { StyledList } from "@/components/StyledList";
+import { StyledUlList } from "@/components/StyledList";
 import { menuItems } from "@/pages/_app.js";
 export default function Maindishes({ handleAmountChange, items }) {
   return (
-    <ul>
+    <StyledUlList>
       {menuItems
         .filter((item) => item.type === "food")
         .map((maindish) => (
@@ -14,6 +14,6 @@ export default function Maindishes({ handleAmountChange, items }) {
             {...maindish}
           />
         ))}
-    </ul>
+    </StyledUlList>
   );
 }

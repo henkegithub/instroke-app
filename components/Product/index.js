@@ -1,5 +1,7 @@
-import { StyledOrderButton } from "../StyledButton";
+import { styled } from "styled-components";
+import { StyledOrderButton, StyledOrderGhostButton } from "../StyledButton";
 import { StyledList } from "../StyledList";
+import { StyledParagraph } from "../StyledParagraph";
 
 export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
   const increase = () => {
@@ -18,22 +20,38 @@ export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
     }
   };
   return (
-    <>
-      <StyledList>
-        <StyledOrderButton className="control__btn" onClick={increase}>
-          +
-        </StyledOrderButton>
-        <p>{amount}</p>
-        <StyledOrderButton className="control__btn" onClick={decrease}>
-          -
-        </StyledOrderButton>
-        <StyledOrderButton className="reset" onClick={reset}>
-          Reset
-        </StyledOrderButton>
-        <p>
+    <StyledList>
+      <StyledMenuItem>
+        <StyledParagraph>
           {name} {price} €
-        </p>
-      </StyledList>
-    </>
+        </StyledParagraph>
+        <StyledDiv>
+          <StyledOrderButton className="control__btn" onClick={increase}>
+            +
+          </StyledOrderButton>
+          {amount}
+          <StyledOrderButton className="control__btn" onClick={decrease}>
+            -
+          </StyledOrderButton>
+          <StyledOrderGhostButton className="reset" onClick={reset}>
+            Reset
+          </StyledOrderGhostButton>
+        </StyledDiv>
+      </StyledMenuItem>
+    </StyledList>
   );
 }
+
+const StyledMenuItem = styled.div`
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+`;
