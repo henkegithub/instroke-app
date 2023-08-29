@@ -5,3 +5,7 @@ export const StyledDiv = styled.div`
   gap: 0.9rem;
   align-items: center;
 `;
+
+export const StyledDivTable = styled.div`
+  display: inline-block;
+`;
