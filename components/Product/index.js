@@ -26,16 +26,10 @@ export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
         <StyledParagraph>{name}</StyledParagraph>
         <StyledParagraphPrice>{price} €</StyledParagraphPrice>
         <StyledDiv>
-          <StyledOrderButton className="control__btn" onClick={increase}>
-            +
-          </StyledOrderButton>
+          <StyledOrderButton onClick={increase}>+</StyledOrderButton>
           {amount}
-          <StyledOrderButton className="control__btn" onClick={decrease}>
-            -
-          </StyledOrderButton>
-          <StyledOrderGhostButton className="reset" onClick={reset}>
-            Reset
-          </StyledOrderGhostButton>
+          <StyledOrderButton onClick={decrease}>-</StyledOrderButton>
+          <StyledOrderGhostButton onClick={reset}>Reset</StyledOrderGhostButton>
         </StyledDiv>
       </StyledMenuItem>
     </StyledList>
