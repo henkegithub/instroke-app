@@ -12,10 +12,15 @@ export default createGlobalStyle`
   }
 
   body {
+    color: white;
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: system-ui;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/bowling-image.jpg");
+    font-family: sans-serif;
   }
   
 `;

@@ -1,3 +1,9 @@
+import { StyledOrderButton, StyledOrderGhostButton } from "../StyledButton";
+import { StyledList } from "../StyledList";
+import { StyledParagraph, StyledParagraphPrice } from "../StyledParagraph";
+import { StyledMenuItem } from "../StyledMenuItem";
+import { StyledDiv } from "../StyledDiv";
+
 export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
   const increase = () => {
     handleAmountChange(id, amount + 1);
@@ -15,19 +21,17 @@ export function Product({ id, name, price, handleAmountChange, amount = 0 }) {
     }
   };
   return (
-    <>
-      <li>{name}</li>
-      <li>{price} €</li>
-      <button className="control__btn" onClick={increase}>
-        +
-      </button>
-      <p>{amount}</p>
-      <button className="control__btn" onClick={decrease}>
-        -
-      </button>
-      <button className="reset" onClick={reset}>
-        Reset
-      </button>
-    </>
+    <StyledList>
+      <StyledMenuItem>
+        <StyledParagraph>{name}</StyledParagraph>
+        <StyledParagraphPrice>{price} €</StyledParagraphPrice>
+        <StyledDiv>
+          <StyledOrderButton onClick={increase}>+</StyledOrderButton>
+          {amount}
+          <StyledOrderButton onClick={decrease}>-</StyledOrderButton>
+          <StyledOrderGhostButton onClick={reset}>Reset</StyledOrderGhostButton>
+        </StyledDiv>
+      </StyledMenuItem>
+    </StyledList>
   );
 }

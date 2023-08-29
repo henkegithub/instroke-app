@@ -1,9 +1,5 @@
-import Link from "next/link";
+import { StyledLink } from "../StyledLink";
 
 export default function CheckOutButton() {
-  return (
-    <>
-      <Link href="/check-out">Checkout!</Link>
-    </>
-  );
+  return <StyledLink href="/check-out">Checkout!</StyledLink>;
 }
